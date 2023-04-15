@@ -5,10 +5,11 @@ import com.tacs.dao.Dao;
 import com.tacs.model.DateOption;
 import com.tacs.repository.DateOptionRepository;
 
-public class DateOptionRepositoryImpl extends GenericCrudRepositoryImpl<DateOption, Long> implements DateOptionRepository {
+public class DateOptionRepositoryImpl extends GenericCrudRepositoryImpl<DateOption, Long>
+    implements DateOptionRepository {
 
-    @Inject
-    public DateOptionRepositoryImpl(Dao<DateOption, Long> dao) {
-        super(dao, DateOption.class);
-    }
+  @Inject
+  public DateOptionRepositoryImpl(Dao<DateOption, Long> dao) {
+    super(dao, DateOption.class);
+  }
 }

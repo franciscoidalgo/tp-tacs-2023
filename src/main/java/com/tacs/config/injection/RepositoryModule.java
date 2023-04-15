@@ -9,10 +9,10 @@ import com.tacs.repository.impl.EventRepositoryImpl;
 import com.tacs.repository.impl.UserRepositoryImpl;
 
 public class RepositoryModule extends AbstractModule {
-    @Override
-    protected void configure() {
-        bind(DateOptionRepository.class).to(DateOptionRepositoryImpl.class).asEagerSingleton();
-        bind(EventRepository.class).to(EventRepositoryImpl.class).asEagerSingleton();
-        bind(UserRepository.class).to(UserRepositoryImpl.class).asEagerSingleton();
-    }
+  @Override
+  protected void configure() {
+    bind(DateOptionRepository.class).to(DateOptionRepositoryImpl.class).asEagerSingleton();
+    bind(EventRepository.class).to(EventRepositoryImpl.class).asEagerSingleton();
+    bind(UserRepository.class).to(UserRepositoryImpl.class).asEagerSingleton();
+  }
 }
