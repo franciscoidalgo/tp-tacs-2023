@@ -29,9 +29,17 @@ public class JwtAccessManager implements AccessManager {
   @Override
   public void manage(@NotNull Handler handler, @NotNull Context context,
                      @NotNull Set<? extends RouteRole> permittedRoles) throws Exception {
+    if (permittedRoles.isEmpty() || permittedRoles.contains(Role.getDefault())) {
+      handler.handle(context);
+    } else {
+      checkRoles(handler, context, permittedRoles);
+    }
+  }
+
+  private void checkRoles(Handler handler, Context context, Set<? extends RouteRole> permittedRoles)
+      throws Exception {
     Role role = getRole(context);
-    if (permittedRoles.isEmpty() || permittedRoles.contains(Role.getDefault()) ||
-        permittedRoles.contains(role)) {
+    if (permittedRoles.contains(role)){
       handler.handle(context);
     } else {
       context.status(HttpStatus.UNAUTHORIZED)

@@ -35,7 +35,7 @@ public class EventService {
         .isActive(true)
         .build();
     eventRepository.save(event);
-    eventDto.setId(event.getId());
+    eventDto.setEventId(event.getId());
     eventDto.setIsActive(true);
   }
 }

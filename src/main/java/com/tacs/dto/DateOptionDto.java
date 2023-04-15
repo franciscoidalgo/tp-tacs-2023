@@ -14,7 +14,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class DateOptionDto {
-  Long id;
+  Long optionId;
   LocalDateTime dateTime;
   List<UserDto> votedBy;
 }

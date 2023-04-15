@@ -1,6 +1,7 @@
 package com.tacs.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -26,9 +27,9 @@ public class DateOption {
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Long id;
   private LocalDateTime dateTime;
-  @ManyToMany
+  @ManyToMany(fetch = FetchType.EAGER)
   @JoinTable(
-      name = "events_votes",
+      name = "options_votes",
       joinColumns = @JoinColumn(name = "option_id"),
       inverseJoinColumns = @JoinColumn(name = "user_id")
   )

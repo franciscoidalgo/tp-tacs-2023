@@ -9,7 +9,7 @@ public class DateOptionMapper {
 
   public static DateOptionDto toDto(DateOption dateOption) {
     return DateOptionDto.builder()
-        .id(dateOption.getId())
+        .optionId(dateOption.getId())
         .dateTime(dateOption.getDateTime())
         .votedBy(dateOption.getVotedBy().stream().map(UserMapper::toDto).toList())
         .build();

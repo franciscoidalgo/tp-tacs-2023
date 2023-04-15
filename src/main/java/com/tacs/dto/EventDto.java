@@ -13,7 +13,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class EventDto {
-  Long id;
+  Long eventId;
   Long organizerId;
   String organizerName;
   Boolean isActive;

@@ -10,7 +10,7 @@ public class EventMapper {
 
   public static EventDto toDto(Event event) {
     return EventDto.builder()
-        .id(event.getId())
+        .eventId(event.getId())
         .organizerId(event.getOrganizer().getId())
         .organizerName(event.getOrganizer().getUsername())
         .isActive(event.getIsActive())

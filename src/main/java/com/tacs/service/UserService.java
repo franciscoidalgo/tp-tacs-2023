@@ -30,7 +30,7 @@ public class UserService {
         .build();
 
     userRepository.save(user);
-    userDto.setId(user.getId());
+    userDto.setUserId(user.getId());
   }
 
   public boolean login(UserDto userDto)
